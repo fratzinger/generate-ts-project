@@ -5,7 +5,6 @@ import { Context } from '../pinion'
 const template = (ctx: Context) => {
 
 return /* shell */`
-
 !lib
 test/.data/**
 
@@ -128,10 +127,9 @@ dist
 
 .cache
 .temp
-
 `
 
 }
 
 export const generate = (context: Context) => generator(context)
-  .then(renderTemplate(template, toFile('.gitignore')))
+  .then(renderTemplate(template, toFile(context.rootFolder, '.gitignore')))

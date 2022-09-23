@@ -48,4 +48,4 @@ jobs:
 }
 
 export const generate = (context: Context) => generator(context)
-  .then(renderTemplate(template, toFile('.github/workflows/nodejs.yml')))
+  .then(renderTemplate(template, toFile(context.rootFolder, '.github/workflows/nodejs.yml')))

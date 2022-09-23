@@ -17,4 +17,4 @@ return /* json */`
 }
 
 export const generate = (context: Context) => generator(context)
-  .then(renderTemplate(template, toFile('.vscode/settings.json')))
+  .then(renderTemplate(template, toFile(context.rootFolder, '.vscode/settings.json')))

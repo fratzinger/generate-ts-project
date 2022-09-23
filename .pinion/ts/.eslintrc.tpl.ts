@@ -32,7 +32,6 @@ return /* json */`
     }, {
       "enforceForRenamedProperties": false
     }],
-    "security/detect-object-injection": "off",
     "object-curly-spacing": ["warn", "always"],
     "prefer-const": ["warn"],
     "@typescript-eslint/consistent-type-imports": ["warn", { "prefer": "type-imports" }]
@@ -53,4 +52,4 @@ return /* json */`
 }
     
 export const generate = (context: Context) => generator(context)
-  .then(renderTemplate(template, toFile('.eslintrc')))
+  .then(renderTemplate(template, toFile(context.rootFolder, '.eslintrc')))

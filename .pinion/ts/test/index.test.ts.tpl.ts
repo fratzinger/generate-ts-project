@@ -16,4 +16,4 @@ describe("index.test.ts", function() {
 }
 
 export const generate = (context: Context) => generator(context)
-  .then(renderTemplate(template, toFile('test/index.test.ts')))
+  .then(renderTemplate(template, toFile(context.rootFolder, 'test/index.test.ts')))

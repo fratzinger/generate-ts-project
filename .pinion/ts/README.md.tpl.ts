@@ -10,4 +10,4 @@ return /* md */`
 }
 
 export const generate = (context: Context) => generator(context)
-  .then(renderTemplate(template, toFile('README.md')))
+  .then(renderTemplate(template, toFile(context.rootFolder, 'README.md')))

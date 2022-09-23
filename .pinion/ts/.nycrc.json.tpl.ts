@@ -36,4 +36,4 @@ return /* json */`
 }
 
 export const generate = (context: Context) => generator(context)
-  .then(renderTemplate(template, toFile('.nycrc.json')))
+  .then(renderTemplate(template, toFile(context.rootFolder, '.nycrc.json')))

@@ -22,4 +22,4 @@ return /* ts */`
 }
   
 export const generate = (context: Context) => generator(context)
-.then(renderTemplate(template, toFile('tsconfig.ts')))
+.then(renderTemplate(template, toFile(context.rootFolder, 'tsconfig.ts')))

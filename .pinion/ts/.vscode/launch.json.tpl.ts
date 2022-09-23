@@ -41,5 +41,5 @@ return /* json */`
 }
 
 export const generate = (context: Context) => generator(context)
-  .then(renderTemplate(template, toFile('.vscode/launch.json')))
+  .then(renderTemplate(template, toFile(context.rootFolder, '.vscode/launch.json')))
   

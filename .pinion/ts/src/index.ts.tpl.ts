@@ -10,4 +10,4 @@ export * from "./types"
 }
 
 export const generate = (context: Context) => generator(context)
-  .then(renderTemplate(template, toFile('src/index.ts')))
+  .then(renderTemplate(template, toFile(context.rootFolder, 'src/index.ts')))

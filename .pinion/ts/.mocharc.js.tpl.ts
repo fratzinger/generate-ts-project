@@ -23,4 +23,4 @@ module.exports = {
 }
 
 export const generate = (context: Context) => generator(context)
-  .then(renderTemplate(template, toFile('.mocharc.js')))
+  .then(renderTemplate(template, toFile(context.rootFolder, '.mocharc.js')))
