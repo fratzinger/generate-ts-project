@@ -55,7 +55,7 @@ const template = (ctx: Context) => {
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-unicorn": "^44.0.2",
     "np": "^7.6.2",
-    "nyc": "^15.1.0",
+    "prettier": "^2.7.1",
     "shx": "^0.3.4",
     "typescript": "^4.8.3",
     "vite": "^3.2.3",
