@@ -17,14 +17,16 @@ const template = (ctx: Context) => {
   },
   "keywords": [],
   "license": "MIT",
-  "main": "dist/",
-  "types": "dist/",
-  "directories": {
-    "test": "test",
-    "src": "src"
+  "main": "dist/index.js",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
   },
   "engines": {
-    "node": ">= 14.0.0"
+    "node": ">= 16.0.0"
   },
   "files": [
     "CHANGELOG.md",
@@ -34,29 +36,28 @@ const template = (ctx: Context) => {
     "dist/**"
   ],
   "scripts": {
-    "compile": "shx rm -rf dist/ && tsc",
-    "version": "npm run compile",
+    "build": "shx rm -rf dist/ && vite build",
+    "version": "npm run build",
     "release": "np",
-    "mocha": "cross-env NODE_ENV=test TS_NODE_PROJECT='tsconfig.test.json' mocha --timeout 5000",
-    "test": "npm run mocha",
-    "coverage": "nyc npm run test",
+    "vitest": "vitest",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {},
   "devDependencies": {
-    "@istanbuljs/nyc-config-typescript": "^1.0.2",
-    "@types/mocha": "^9.1.1",
     "@types/node": "^18.7.18",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.23.1",
-    "mocha": "^10.0.0",
+    "eslint-plugin-unicorn": "^44.0.2",
     "np": "^7.6.2",
     "nyc": "^15.1.0",
     "shx": "^0.3.4",
-    "ts-node": "^10.9.1",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.3",
+    "vite": "^3.2.3",
+    "vitest": "^0.25.1"
   }
 }`
 

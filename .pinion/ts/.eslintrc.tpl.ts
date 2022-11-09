@@ -2,7 +2,6 @@ import { generator, renderTemplate, toFile } from '@feathershq/pinion'
 import { Context } from '../pinion'
 
 const template = (ctx: Context) => {
-
 return /* json */`
 {
   "root": true,
@@ -12,7 +11,8 @@ return /* json */`
   },
   "parser": "@typescript-eslint/parser",
   "plugins": [
-    "@typescript-eslint"
+    "@typescript-eslint",
+    "unicorn"
   ],
   "extends": [
     "eslint:recommended",
@@ -34,7 +34,8 @@ return /* json */`
     }],
     "object-curly-spacing": ["warn", "always"],
     "prefer-const": ["warn"],
-    "@typescript-eslint/consistent-type-imports": ["warn", { "prefer": "type-imports" }]
+    "@typescript-eslint/consistent-type-imports": ["warn", { "prefer": "type-imports" }],
+    "unicorn/prefer-node-protocol": ["warn"]
   },
   "overrides": [
     {
@@ -47,9 +48,7 @@ return /* json */`
     }
   ]
 }
-`
-
-}
+`}
     
 export const generate = (context: Context) => generator(context)
   .then(renderTemplate(template, toFile(context.rootFolder, '.eslintrc')))
