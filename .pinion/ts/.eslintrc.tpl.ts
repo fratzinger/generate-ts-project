@@ -6,8 +6,7 @@ return /* json */`
 {
   "root": true,
   "env": {
-    "node": true,
-    "mocha": true
+    "node": true
   },
   "parser": "@typescript-eslint/parser",
   "plugins": [
