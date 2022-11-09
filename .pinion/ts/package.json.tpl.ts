@@ -51,6 +51,8 @@ const template = (ctx: Context) => {
     "@typescript-eslint/parser": "^5.37.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-unicorn": "^44.0.2",
     "np": "^7.6.2",
     "nyc": "^15.1.0",

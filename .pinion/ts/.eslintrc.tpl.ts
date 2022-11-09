@@ -12,11 +12,13 @@ return /* json */`
   "parser": "@typescript-eslint/parser",
   "plugins": [
     "@typescript-eslint",
-    "unicorn"
+    "unicorn",
+    "prettier"
   ],
   "extends": [
     "eslint:recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
   ],
   "rules": {
     "quotes": ["warn", "double", "avoid-escape"],
