@@ -3,8 +3,7 @@ import { Context } from '../../pinion'
 
 const template = (ctx: Context) => {
 
-return /* ts */`
-import { expect } from "vitest";
+return /* ts */`import { expect } from "vitest";
 import {} from "../src";
 
 describe("index.test.ts", function() {

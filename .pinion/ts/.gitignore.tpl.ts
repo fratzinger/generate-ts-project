@@ -4,8 +4,7 @@ import { Context } from '../pinion'
 
 const template = (ctx: Context) => {
 
-return /* shell */`
-!lib
+return /* shell */`!lib
 test/.data/**
 
 # Logs

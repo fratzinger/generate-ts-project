@@ -3,8 +3,7 @@ import { Context } from '../pinion'
   
 const template = (ctx: Context) => {
   
-return /* json */`
-{
+return /* json */`{
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

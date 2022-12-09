@@ -3,8 +3,7 @@ import { Context } from '../pinion'
 
 const template = (ctx: Context) => {
 
-return `
-MIT License
+return `MIT License
 
 Copyright (c) ${new Date().getFullYear()} ${ctx.author}
 

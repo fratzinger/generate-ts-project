@@ -4,8 +4,7 @@ import { Context } from '../pinion'
 // A template to render using JavaScript template strings
 const template = (ctx: Context) => {
 
-  return /* json */`
-{
+  return /* json */`{
   "name": "${ctx.npmPackageName}",
   "version": "0.0.0",
   "description": "${ctx.description}",
@@ -17,14 +16,15 @@ const template = (ctx: Context) => {
   },
   "keywords": [],
   "license": "MIT",
-  "main": "dist/index.js",
-  "module": "./dist/index.mjs",
+  "type": "module",
   "exports": {
     ".": {
       "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
+      "require": "./dist/index.cjs"
     }
   },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
   "engines": {
     "node": ">= 16.0.0"
   },
@@ -36,7 +36,7 @@ const template = (ctx: Context) => {
     "dist/**"
   ],
   "scripts": {
-    "build": "shx rm -rf dist/ && vite build",
+    "build": "unbuild",
     "version": "npm run build",
     "release": "np",
     "vitest": "vitest",
@@ -49,15 +49,17 @@ const template = (ctx: Context) => {
     "@types/node": "^18.7.18",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
+    "@vitest/coverage-c8": "^0.25.3",
     "cross-env": "^7.0.3",
-    "eslint": "^8.23.1",
+    "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-unicorn": "^44.0.2",
+    "eslint-plugin-unicorn": "^45.0.0",
     "np": "^7.6.2",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.0",
     "shx": "^0.3.4",
-    "typescript": "^4.8.3",
+    "typescript": "^4.9.3",
+    "unbuild": "^1.0.1",
     "vite": "^3.2.3",
     "vitest": "^0.25.1"
   }

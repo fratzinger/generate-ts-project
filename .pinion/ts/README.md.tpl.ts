@@ -3,10 +3,8 @@ import { Context } from '../pinion'
 
 const template = (ctx: Context) => {
 
-return /* md */`
-# ${ctx.npmPackageName}
+return /* md */`# ${ctx.npmPackageName}
 `
-
 }
 
 export const generate = (context: Context) => generator(context)

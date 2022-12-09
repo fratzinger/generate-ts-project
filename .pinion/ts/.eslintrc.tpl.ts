@@ -2,8 +2,7 @@ import { generator, renderTemplate, toFile } from '@feathershq/pinion'
 import { Context } from '../pinion'
 
 const template = (ctx: Context) => {
-return /* json */`
-{
+return /* json */`{
   "root": true,
   "env": {
     "node": true
